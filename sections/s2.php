@@ -28,25 +28,16 @@
         $sum_num2 = 0;
         for ($i = 1; $i < $num1; $i++){
             if ($num1 % $i==0){
-                echo $i;
-                echo '<br>';
                 $div1[] = $i;
             }
         }
-        echo ("Numero 2");
-        echo '<br>';
         for ($e = 1; $e < $num1; $e++){
             if ($num2 % $e==0){
-                echo $e;
-                echo '<br>';
                 $div2[] = $e;
             }
         }
         $sum_num1 = array_sum($div1);
         $sum_num2 = array_sum($div2);
-        echo ($sum_num1);
-        echo '<br>';
-        echo ($sum_num2);
         echo '<br>';
         if (($num1 == $sum_num2) && ($num2 == $sum_num1)){
             echo("Los numeros ingresados son Numeros amigos");
