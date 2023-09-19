@@ -15,11 +15,10 @@
         Numero_2:
         <input type="text" name="num2" required>
         <br>
-        <input type="submit" name="sumbit" value="Enviar">
+        <input type="submit" name="sumbit" value="Confirmar">
     </form>
     <h1>Resultado: </h1>
     <?php
-    ?>
     if(isset($_POST['sumbit'])){
         $num1 = $_POST['num1'];
         $num2 = $_POST['num2'];
@@ -27,6 +26,23 @@
         $div2 =[];
         $sum_num1 = 0;
         $sum_num2 = 0;
+        for ($i = 1; $i < $num1; $i++){
+            if ($num1 % $i==0){
+                echo $i;
+                echo '<br>';
+                $div1[] = $i;
+            }
+        }
+        echo ("Numero 2");
+        echo '<br>';
+        for ($e = 1; $e < $num1; $e++){
+            if ($num2 % $e==0){
+                echo $e;
+                echo '<br>';
+                $div2[] = $e;
+            }
+        }
     }
+    ?>
 </body>
 </html>
