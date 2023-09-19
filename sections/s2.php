@@ -42,6 +42,17 @@
                 $div2[] = $e;
             }
         }
+        $sum_num1 = array_sum($div1);
+        $sum_num2 = array_sum($div2);
+        echo ($sum_num1);
+        echo '<br>';
+        echo ($sum_num2);
+        echo '<br>';
+        if (($num1 == $sum_num2) && ($num2 == $sum_num1)){
+            echo("Los numeros ingresados son Numeros amigos");
+        }else{
+            echo("Los numeros ingresados no son Numeros amigos");
+        }
     }
     ?>
 </body>
