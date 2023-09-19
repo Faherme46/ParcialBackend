@@ -17,5 +17,16 @@
         <br>
         <input type="submit" name="sumbit" value="Enviar">
     </form>
+    <h1>Resultado: </h1>
+    <?php
+    ?>
+    if(isset($_POST['sumbit'])){
+        $num1 = $_POST['num1'];
+        $num2 = $_POST['num2'];
+        $div1 =[];
+        $div2 =[];
+        $sum_num1 = 0;
+        $sum_num2 = 0;
+    }
 </body>
 </html>
