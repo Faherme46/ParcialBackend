@@ -1,0 +1,59 @@
+.content{justify-content: center;
+    vertical-align: middle;
+}
+a{
+text-decoration: none;
+}
+
+.menu {
+    text-align: center;
+    height: 100vh; /* Establece la altura del menú al 100% del alto de la ventana */
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 35%;
+  }
+  
+  .botonGrande {
+    display: block; /* Cambiar a bloque para que los botones estén dispuestos verticalmente */
+    background-color: white; /* Fondo blanco */
+    border: none; /* Sin bordes */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    margin: 10px auto; /* Margen automático para centrar verticalmente */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    text-decoration: none;
+    color: #000;
+    width:100%;
+    height: auto;
+  }
+  
+  /* Estilos adicionales para los botones */
+  .botonGrande:hover {
+    background-color: #f2f2f2; /* Cambiar color al pasar el ratón por encima */
+  }
+  
+  .botonGrande h1 {
+    margin: 0; /* Eliminar el margen del encabezado h1 dentro del botón */
+    font-size:50pt;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:orangered;
+  }
+.divTitulo{
+    justify-content: center;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+}
+.titulo{
+    
+    text-align: center;
+    margin: 0; /* Eliminar el margen del encabezado h1 dentro del botón */
+    font-size:50pt;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:orangered;
+}
