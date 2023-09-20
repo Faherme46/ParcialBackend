@@ -1,3 +1,9 @@
+body {
+    
+  background-color: #1c0036;
+}
+
+
 .content{justify-content: center;
     vertical-align: middle;
 }
@@ -7,7 +13,7 @@ text-decoration: none;
 
 .menu {
     text-align: center;
-    height: 100vh; /* Establece la altura del menú al 100% del alto de la ventana */
+    height: 90vh; /* Establece la altura del menú al 100% del alto de la ventana */
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -40,20 +46,9 @@ text-decoration: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color:orangered;
   }
-.divTitulo{
-    justify-content: center;
-    vertical-align: middle;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    
-}
-.titulo{
-    
-    text-align: center;
-    margin: 0; /* Eliminar el margen del encabezado h1 dentro del botón */
+  .divTitulo {
+    text-align: center; /* Centrar horizontalmente el texto */
+    color: white; /* Establecer el color del texto en blanco */
     font-size:50pt;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color:orangered;
-}
+  }
