@@ -9,15 +9,15 @@
     <script src="./js/index.js"></script>
     <title>Parcial</title>
 </head>
-<body background="./source/background.jpg">
-<div><h1 class='divTitulo'>Parcial 1 Backend </h1></div>
+<body >
+    <div><h1 class='divTitulo'>Parcial 1 Backend </h1></div>
     
     <div class='content'>
         <div class="menu">
         <a href="./sections/s1.php"><button type="button" class="botonGrande" ><center><h1>Seccion 1</h1></center></button></a>
-        <a href="./sections/s1.php"><button type="button" class="botonGrande"><center><h1>Seccion 2</h1></center></button></a>
-        <a href="./sections/s1.php"><button type="button" class="botonGrande"><center><h1>Seccion 3</h1></center></button></a>
-        <a href="./sections/s1.php"><button type="button" class="botonGrande"><center><h1>Seccion 4</h1></center></button></a>
+        <a href="./sections/s2.php"><button type="button" class="botonGrande"><center><h1>Seccion 2</h1></center></button></a>
+        <a href="./sections/s3.php"><button type="button" class="botonGrande"><center><h1>Seccion 3</h1></center></button></a>
+        <a href="./sections/s4.php"><button type="button" class="botonGrande"><center><h1>Seccion 4</h1></center></button></a>
         </div>
     </div>
 </body>
