@@ -1,6 +1,7 @@
-<?
-
-?>
+<?php
+require_once '../poo/Persona.php';
+require_once '../poo/Array.php';
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +23,17 @@
         <br>
     </form>
     <h2>Informacion enviada</h2>
+    
+    
+    <h1>Resultados:</h1>   
+   
+    Promedio edades: <br>
+    Edad más joven:<br>
+    
     <?php
-    print_r($_POST)
+    
+    echo "Total de personas: ". count($edad).'<br>';
+
     ?>
 </body>
 </html>
