@@ -5,27 +5,18 @@ function llenarPiscina($nuestraPiscina, $balde, $perdidaNuestra, $piscinaVecino,
     $viajesVecino = 0;
 
     while (true) {
+
         // Llenamos nuestra piscina
-        $nuestraPiscina += $balde;
+        $nuestraPiscina -= $balde-$perdidaNuestra;
+        
         $viajesNuestros++;
-
-        // Verificamos si ya está llena o si necesitamos hacer otro viaje
-        if ($nuestraPiscina >= $piscinaVecino) {
-            return ["YO", $viajesNuestros];
-        } else {
-            // El vecino también llena su piscina
-            $piscinaVecino += $baldeVecino;
-            $viajesVecino++;
-
-            // Verificamos si ya está llena o si necesitamos hacer otro viaje
-            if ($piscinaVecino >= $nuestraPiscina) {
-                return ["VECINO", $viajesVecino];
-            }
-        }
+        $piscinaVecino -= $baldeVecino-$perdidaVecino;
+        $viajesVecino++;
+        
 
         // Verificamos si ocurrió una división por 0 (evitamos un ciclo infinito)
-        if ($balde == 0 || $baldeVecino == 0) {
-            return ["EMPATE", -1];
+        if ($nuestraPiscina <=0 || $piscinaVecino<=0) {
+            return [$viajesNuestros, $viajesVecino,$nuestraPiscina,$perdidaVecino];
         }
     }
 }
@@ -46,8 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $resultado = llenarPiscina($litrosNuestraPiscina, $litrosBalde, $perdidaNuestra, $litrosPiscinaVecino, $litrosBaldeVecino, $perdidaVecino);
 
     // Guardar el resultado en variables
-    $ganador = $resultado[0];
-    $numViajes = $resultado[1];
+    $vialesMios = $resultado[0];
+    $viajesVecino = $resultado[1];
+    $mipiscina=$resultado[2];
+    $pVecino=$resultado[3];
 }
 ?>
 
@@ -85,13 +78,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     <?php
     // Mostrar el resultado solo si se ha calculado
-    if ($ganador !== "") {
+    if ($vialesMios !=0) {
         echo "<h2>Resultado:</h2>";
-        if ($ganador === "YO") {
-            echo "¡Ganaste! Realizaste $numViajes viajes para llenar la piscina.";
-        } elseif ($ganador === "VECINO") {
+    
+        
+        if ($vialesMios > $viajesVecino && $mipiscina==0) {
+            echo "Ganaste! Realizaste $numViajes viajes para llenar la piscina.";
+        } elseif ($vialesMios < $viajesVecino && $pVecino==0) {
             echo "El vecino ganó. Realizó $numViajes viajes para llenar su piscina.";
-        } else {
+        } else if($vialesMios == $viajesVecino){
             echo "Hubo un empate. Ambos llenaron sus piscinas al mismo tiempo.";
         }
     }
