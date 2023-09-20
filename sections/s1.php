@@ -30,6 +30,9 @@ function llenarPiscina($nuestraPiscina, $balde, $perdidaNuestra, $piscinaVecino,
     }
 }
 
+$ganador = "";
+$numViajes = "";
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Obtener datos del formulario
     $litrosNuestraPiscina = $_POST["litrosNuestraPiscina"];
@@ -42,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Llamamos a la función para determinar el ganador y el número de viajes
     $resultado = llenarPiscina($litrosNuestraPiscina, $litrosBalde, $perdidaNuestra, $litrosPiscinaVecino, $litrosBaldeVecino, $perdidaVecino);
 
-    // Imprimir el resultado
+    // Guardar el resultado en variables
     $ganador = $resultado[0];
     $numViajes = $resultado[1];
 }
@@ -51,11 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/general.css">
-    <script src="../js/s1.js"></script>
     <title>Llenando Piscinas</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <h1>Llenando Piscinas</h1>
@@ -82,12 +82,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <input type="submit" value="Calcular">
     </form>
     </div>
+    
     <?php
-    // Mostrar el resultado si está disponible
-    if (isset($ganador) && isset($numViajes)) {
+    // Mostrar el resultado solo si se ha calculado
+    if ($ganador !== "") {
         echo "<h2>Resultado:</h2>";
-        echo "Ganador: $ganador<br>";
-        echo "Número de viajes: $numViajes<br>";
+        if ($ganador === "YO") {
+            echo "¡Ganaste! Realizaste $numViajes viajes para llenar la piscina.";
+        } elseif ($ganador === "VECINO") {
+            echo "El vecino ganó. Realizó $numViajes viajes para llenar su piscina.";
+        } else {
+            echo "Hubo un empate. Ambos llenaron sus piscinas al mismo tiempo.";
+        }
     }
     ?>
 </body>
